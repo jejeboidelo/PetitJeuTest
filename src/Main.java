@@ -2,8 +2,12 @@ import java.awt.*;
 
 public class Main {
 
+
+
     public static void main(String[] args) {
-        GameWindow window = new GameWindow();
+
+        BoucleJeu boucle = new BoucleJeu();
+boucle.boucle();
 
     }
 
