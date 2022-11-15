@@ -1,3 +1,5 @@
+import java.awt.*;
+
 public class Point {
     public int posx;
     public int posy;
@@ -22,4 +24,19 @@ public class Point {
     public void setPosy(int posy) {
         this.posy = posy;
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "posx=" + posx +
+                ", posy=" + posy +
+                '}';
+    }
+
+    public void move(Vecteur v){
+        posx+= v.vitesseX;
+        posy+= v.vitesseY;
+    }
+
+
 }
