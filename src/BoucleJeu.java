@@ -91,13 +91,28 @@ public class BoucleJeu{
     }
 
     public void renderFps(Graphics2D g){
+        // Distance max = 1460, min =0
         int largeurrayon = 5;
-        int coinhautgauche=window.getCanva().getWidth()-570;
+        int originGauche=window.getCanva().getWidth()-570;
+        int hauteurMaxMure = 1460/2;
 
+//        int distPrec = p1.listeRay.get(0).distance;
         for(Rayon r: p1.listeRay){
-            g.setColor(Color.white);
-            g.fillRect(coinhautgauche,100+((365-(1460-r.distance)/2)/2),largeurrayon,(1460-r.distance)/2);
-            coinhautgauche+=largeurrayon;
+//            int distAct = r.distance;
+//            if(distAct-distPrec<0){
+//                g.setColor(Color.black);
+//            }else {
+//                g.setColor(Color.gray);
+//            }
+            g.setColor(Color.gray);
+            int hauteurMur = (1460-r.distance)/2;
+            g.fillRect(originGauche,(hauteurMaxMure-hauteurMur)/2,largeurrayon,hauteurMur);
+
+            g.setColor(new Color(97, 16, 3));
+            g.fillRect(originGauche,((hauteurMaxMure-hauteurMur)/2)+hauteurMur,largeurrayon,(hauteurMaxMure-hauteurMur)/2);
+
+
+            originGauche+=largeurrayon;
         }
     }
 }
